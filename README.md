@@ -184,7 +184,7 @@ What if we wanted to instantiate our new hash with this default right off the
 
 Then, in `bin/lab.rb` initialize a new hash using `Hash.new` with a block that
  sets the default value (without using `.default`) of all keys to the string
-`"Sorry, <keyname> does not exist".`
+`"Cool, <keyname> does NOW exist"`
 
 ### Demo: Hash as Final Argument to Method
 
