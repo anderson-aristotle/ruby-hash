@@ -151,9 +151,9 @@ Then, in `bin/lab.rb` initialize a new hash using `Hash.new` with a block that
  sets the default value (without using `.default`) of all keys to the string
 `"Sorry, <keyname> does not exist".`
 
-### Demo: Hash as Final Argument to Function
+### Demo: Hash as Final Argument to Method
 
-Curly braces are not necessary when the last parameter to a function is a hash.
+If the last argument to a method is a hash, you may omit the curly braces.
 
 ```ruby
 [].push 4, 'hi', given_name:'dave', surname:'smith'
