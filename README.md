@@ -20,13 +20,13 @@ By the end of this, developers should be able to:
 
 In Ruby, "A Hash is a dictionary-like collection of unique keys and their
  values".  In sharp contrast to JavaScript,
-[Ruby Hashes](http://ruby-doc.org/core-2.3.1/Hash.html) are not the most general
+[Ruby Hashes](http://ruby-doc.org/core-2.4.1/Hash.html) are not the most general
  object in the language, but are instances of a specialized class for key/value
  storage.
 
 ## Ruby Symbols
 
-A [Symbol](http://ruby-doc.org/core-2.3.1/Symbol.html) is a sequence of
+A [Symbol](http://ruby-doc.org/core-2.4.1/Symbol.html) is a sequence of
  characters that is stored at most once in any instance of the Ruby interpreter.
 
 In Ruby, strings are compared a character at a time, but symbols are compared by
@@ -120,7 +120,7 @@ Picking sensible defaults may not always be easy.
 
 ### Code Along: Hash::new
 
-Let's use the different forms of [Hash::new](http://ruby-doc.org/core-2.3.1/Hash.html#method-c-new)
+Let's use the different forms of [Hash::new](http://ruby-doc.org/core-2.4.1/Hash.html#method-c-new)
 to create some hashes in `bin/code_along.rb`.
 
 ### Lab: Hash Shorthand
@@ -180,7 +180,7 @@ priced_apartment.keys
 ### Lab: Hash.new Initialized With Default
 
 What if we wanted to instantiate our new hash with this default right off the
- bat? Checkout the Ruby docs on [new hashes with default blocks](http://ruby-doc.org/core-2.3.1/Hash.html#new-method).
+ bat? Checkout the Ruby docs on [new hashes with default blocks](http://ruby-doc.org/core-2.4.1/Hash.html#new-method).
 
 Then, in `bin/lab.rb` initialize a new hash using `Hash.new` with a block that
  sets the default value (without using `.default`) of all keys to the string
