@@ -20,13 +20,13 @@ By the end of this, developers should be able to:
 
 In Ruby, "A Hash is a dictionary-like collection of unique keys and their
  values".  In sharp contrast to JavaScript,
-[Ruby Hashes](http://ruby-doc.org/core-2.3.1/Hash.html) are not the most general
+[Ruby Hashes](http://ruby-doc.org/core-2.4.1/Hash.html) are not the most general
  object in the language, but are instances of a specialized class for key/value
  storage.
 
 ## Ruby Symbols
 
-A [Symbol](http://ruby-doc.org/core-2.3.1/Symbol.html) is a sequence of
+A [Symbol](http://ruby-doc.org/core-2.4.1/Symbol.html) is a sequence of
  characters that is stored at most once in any instance of the Ruby interpreter.
 
 In Ruby, strings are compared a character at a time, but symbols are compared by
@@ -37,37 +37,49 @@ In Ruby, strings are compared a character at a time, but symbols are compared by
 
 Each of the following pairs of operations are equivalent:
 
-```ruby
-> 'bob'.equal? 'bob'
-=> false
-> 'bob'.object_id == 'bob'.object_id
-=> false
-> 'bob'.eql? 'bob'
-=> true
-> 'bob' == 'bob'
-=> true
-```
+<!-- start code block file="snippets/equivalency_test.rb" -->
+```rb
+# frozen_string_literal: true
 
-But all of the following operations are equivalent:
+'bob'.equal? 'bob'
+# => false
 
-```ruby
-> :bob.equal? :bob
-=> true
-> :bob.object_id == :bob.object_id
-=> true
-> :bob.eql? :bob
-=> true
-> :bob == :bob
-=> true
+'bob'.object_id == 'bob'.object_id
+# => false
+
+'bob'.eql? 'bob'
+# => true
+
+'bob' == 'bob'
+# => true
+
+# But all of the following operations are equivalent:
+
+:bob.equal? :bob
+# => true
+
+:bob.object_id == :bob.object_id
+# => true
+
+:bob.eql? :bob
+# => true
+
+:bob == :bob
+# => true
 ```
+<!-- end code block -->
 
 We can create a symbol with arbitrary characters if we surround the characters
  with quotes (either `:'<characters>'` or `'<characters>'.to_sym`):
 
-```ruby
-> :'&foo'.equal? '&foo'.to_sym
-=> true
+<!-- start code block file="snippets/arbitrary_symbol.rb" -->
+```rb
+# frozen_string_literal: true
+
+:'&foo'.equal? '&foo'.to_sym
+# => true
 ```
+<!-- end code block -->
 
 How does this compare to keys in JavaScript?
 
@@ -77,28 +89,38 @@ Let's look at different ways to create a Hash.
 
 ### Demo: Hash Creation
 
-```ruby
-> apartment = {}
-=> {}
-> apartment = Hash.new
-=> {}
-> apartment = Hash.new('')
-=> {}
-> apartment[:address]
-=> ""
-> apartment[:address] = { street: '255 Long Road', city: 'Awesomeville'}
-=> {:street=>"255 Long Road", :city=>"Awesomeville"}
-> apartment[:bedrooms] = 3
-=> 3
-> priced_apartment = apartment.merge({rent: 1000})
-=> {:address=>{:street=>"255 Long Road", :city=>"Awesomeville"}, :bedrooms=>3, :rent=>1000}
+<!-- start code block file="snippets/hash_creation.rb" -->
+```rb
+# frozen_string_literal: true
+
+apartment = {}
+# => {}
+
+apartment = Hash.new
+# => {}
+
+apartment = Hash.new('')
+# => {}
+
+apartment[:address]
+# => ""
+
+apartment[:address] = { street: '255 Long Road', city: 'Awesomeville' }
+# => {:street=>"255 Long Road", :city=>"Awesomeville"}
+
+apartment[:bedrooms] = 3
+# => 3
+
+priced_apartment = apartment.merge(rent: 1000)
+# => {:address=>{:street=>"255 Long Road", :city=>"Awesomeville"}, :bedrooms=>3, :rent=>1000}
 ```
+<!-- end code block -->
 
 Picking sensible defaults may not always be easy.
 
 ### Code Along: Hash::new
 
-Let's use the different forms of [Hash::new](http://ruby-doc.org/core-2.3.1/Hash.html#method-c-new)
+Let's use the different forms of [Hash::new](http://ruby-doc.org/core-2.4.1/Hash.html#method-c-new)
 to create some hashes in `bin/code_along.rb`.
 
 ### Lab: Hash Shorthand
@@ -112,20 +134,29 @@ accessing non-existing keys return the default.
 
 ### Demo: Accessing, Modifying, and Deleting
 
-```ruby
-> priced_apartment[:occupants] = []
-=> []
-> lee = {name: "Lee", age: 24, dog: "Fluffy"}
-=> {:name=>"Lee", :age=>24, :dog=>"Fluffy"}
-> adrian = {name: "Adrian", age: 25, cat: "Scratchy"}
-=> {:name=>"Adrian", :age=>25, :cat=>"Scratchy"}
-> priced_apartment[:occupants].push(lee, adrian)
-=> [{:name=>"Lee", :age=>24, :dog=>"Fluffy"}, {:name=>"Adrian", :age=>25, :cat=>"Scratchy"}]
-> priced_apartment[:occupants][1].delete(:cat)
-=> "Scratchy"
-> priced_apartment[:rent] += 150
-=> 1150
+<!-- start code block file="snippets/hash_elements.rb" -->
+```rb
+# frozen_string_literal: true
+
+priced_apartment[:occupants] = []
+# => []
+
+lee = {name: 'Lee', age: 24, dog: 'Fluffy'}
+# => {:name=>"Lee", :age=>24, :dog=>"Fluffy"}
+
+adrian = {name: 'Adrian', age: 25, cat: 'Scratchy'}
+# => {:name=>"Adrian", :age=>25, :cat=>"Scratchy"}
+
+priced_apartment[:occupants].push(lee, adrian)
+# => [{:name=>"Lee", :age=>24, :dog=>"Fluffy"}, {:name=>"Adrian", :age=>25, :cat=>"Scratchy"}]
+
+priced_apartment[:occupants][1].delete(:cat)
+# => "Scratchy"
+
+priced_apartment[:rent] += 150
+# => 1150
 ```
+<!-- end code block -->
 
 ### Lab: Appending
 
@@ -137,48 +168,36 @@ Append one or more properties of your choosing to the roommate objects, such as
 
 To get an Array of the keys that have been set in a hash, use `Hash#keys`.
 
-```ruby
-> priced_apartment.keys
-=> [:address, :bedrooms, :occupants, :rent]
+<!-- start code block file="snippets/hash_keys.rb" -->
+```rb
+# frozen_string_literal: true
+
+priced_apartment.keys
+# => [:address, :bedrooms, :occupants, :rent]
 ```
+<!-- end code block -->
 
 ### Lab: Hash.new Initialized With Default
 
 What if we wanted to instantiate our new hash with this default right off the
- bat? Checkout the Ruby docs on [new hashes with default blocks](http://ruby-doc.org/core-2.3.1/Hash.html#new-method).
+ bat? Checkout the Ruby docs on [new hashes with default blocks](http://ruby-doc.org/core-2.4.1/Hash.html#new-method).
 
 Then, in `bin/lab.rb` initialize a new hash using `Hash.new` with a block that
  sets the default value (without using `.default`) of all keys to the string
-`"Sorry, <keyname> does not exist".`
+`"Cool, <keyname> does NOW exist"`
 
-### Demo: Hash as Final Argument to Function
+### Demo: Hash as Final Argument to Method
 
-Curly braces are not necessary when the last parameter to a function is a hash.
+If the last argument to a method is a hash, you may omit the curly braces.
 
-```ruby
-def mad_lib(greeting, opts_hash)
+<!-- start code block file="snippets/terminal_hash_argument.rb" -->
+```rb
+# frozen_string_literal: true
 
-  puts greeting
-
-  [
-    "This morning I came to campus and ran into #{opts_hash[:name]}.",
-    "We talked about #{opts_hash[:noun]},",
-    "which is a #{opts_hash[:adjective]} subject.",
-    "We couldn't talk for long though since I had to",
-    "#{opts_hash[:verb]} to class."
-  ].join(' ')
-end
-
-mad_lib('Hello, please enjoy this madlib!', noun: 'rainbows', adjective: 'gritty', verb: 'scoot', name: 'Ric Flair')
-
-# mad_lib('Hello', {
-#   noun: 'rainbows',
-#   adjective: 'gritty',
-#   verb: 'scoot',
-#   name: 'Ric Flair'
-# })
+[].push 4, 'hi', given_name: 'dave', surname: 'smith'
+# => [4, "hi", {:given_name=>"dave", :surname=>"smith"}]
 ```
-
+<!-- end code block -->
 
 ## [License](LICENSE)
 
