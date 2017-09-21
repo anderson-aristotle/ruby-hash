@@ -10,7 +10,7 @@ Fork, clone, branch (training), `bundle install`
 
 By the end of this, developers should be able to:
 
--   Create a Ruby Hash using both the implicit (`{}`) and `new` constructors.
+-   Create a Ruby Hash using both the literal (`{}`) and `new` constructors.
 -   Assign a value to, modify, and delete a value in a Ruby Hash using a specified key.
 -   Access a value in a Ruby Hash using a specified key.
 -   Obtain an Array of keys from a Ruby Hash.
@@ -123,9 +123,9 @@ Picking sensible defaults may not always be easy.
 Let's use the different forms of [Hash::new](http://ruby-doc.org/core-2.4.1/Hash.html#method-c-new)
 to create some hashes in `bin/code_along.rb`.
 
-### Lab: Hash Shorthand
+### Lab: Hash Literal
 
-In [bin/lab.rb](bin/lab.rb) create a hash using the shorthand syntax for
+In [bin/lab.rb](bin/lab.rb) create a hash using the literal syntax for
 assigning the keys `:sq_ft` `:pets_allowed` with a type-appropriate value
 of your choice. Then assign a default of `[]` to the hash and make sure that
 accessing non-existing keys return the default.
