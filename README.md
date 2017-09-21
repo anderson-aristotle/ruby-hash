@@ -10,7 +10,7 @@ Fork, clone, branch (training), `bundle install`
 
 By the end of this, developers should be able to:
 
--   Create a Ruby Hash using both the implicit (`{}`) and `new` constructors.
+-   Create a Ruby Hash using both the literal (`{}`) and `new` constructors.
 -   Assign a value to, modify, and delete a value in a Ruby Hash using a specified key.
 -   Access a value in a Ruby Hash using a specified key.
 -   Obtain an Array of keys from a Ruby Hash.
@@ -121,11 +121,11 @@ Picking sensible defaults may not always be easy.
 ### Code Along: Hash::new
 
 Let's use the different forms of [Hash::new](http://ruby-doc.org/core-2.4.1/Hash.html#method-c-new)
-to create some hashes in `bin/code_along.rb`.
+to create some hashes in `lib/code_along.rb`.
 
-### Lab: Hash Shorthand
+### Lab: Hash Literal
 
-In [bin/lab.rb](bin/lab.rb) create a hash using the shorthand syntax for
+In [lib/lab.rb](lib/lab.rb) create a hash using the literal syntax for
 assigning the keys `:sq_ft` `:pets_allowed` with a type-appropriate value
 of your choice. Then assign a default of `[]` to the hash and make sure that
 accessing non-existing keys return the default.
@@ -160,7 +160,7 @@ priced_apartment[:rent] += 150
 
 ### Lab: Appending
 
-Add roommate Bo to `:occupants` in the hash in [bin/lab.rb](bin/lab.rb).
+Add roommate Bo to `:occupants` in the hash in [lib/lab.rb](lib/lab.rb).
 Append one or more properties of your choosing to the roommate objects, such as
 `:job` or `:education`.
 
@@ -182,7 +182,7 @@ priced_apartment.keys
 What if we wanted to instantiate our new hash with this default right off the
  bat? Checkout the Ruby docs on [new hashes with default blocks](http://ruby-doc.org/core-2.4.1/Hash.html#new-method).
 
-Then, in `bin/lab.rb` initialize a new hash using `Hash.new` with a block that
+Then, in `lib/lab.rb` initialize a new hash using `Hash.new` with a block that
  sets the default value (without using `.default`) of all keys to the string
 `"Cool, <keyname> does NOW exist"`
 
