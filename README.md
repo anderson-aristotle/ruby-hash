@@ -129,14 +129,15 @@ In [lib/lab.rb](lib/lab.rb) create a hash using the literal syntax for assigning
 priced_apartment[:occupants] = []
 # => []
 
-lee = {name: 'Lee', age: 24, dog: 'Fluffy'}
+lee = { name: 'Lee', age: 24, dog: 'Fluffy' }
 # => {:name=>"Lee", :age=>24, :dog=>"Fluffy"}
 
-adrian = {name: 'Adrian', age: 25, cat: 'Scratchy'}
+adrian = { name: 'Adrian', age: 25, cat: 'Scratchy' }
 # => {:name=>"Adrian", :age=>25, :cat=>"Scratchy"}
 
 priced_apartment[:occupants].push(lee, adrian)
-# => [{:name=>"Lee", :age=>24, :dog=>"Fluffy"}, {:name=>"Adrian", :age=>25, :cat=>"Scratchy"}]
+# => [{:name=>"Lee", :age=>24, :dog=>"Fluffy"},
+# {:name=>"Adrian", :age=>25, :cat=>"Scratchy"}]
 
 priced_apartment[:occupants][1].delete(:cat)
 # => "Scratchy"
@@ -177,8 +178,8 @@ If the last argument to a method is a hash, you may omit the curly braces.
 ```rb
 # frozen_string_literal: true
 
-[].push 4, 'hi', given_name: 'dave', surname: 'smith'
-# => [4, "hi", {:given_name=>"dave", :surname=>"smith"}]
+[].push 4, 'hi', first_name: 'dave', last_name: 'smith'
+# => [4, "hi", {:first_name=>"dave", :last_name=>"smith"}]
 ```
 <!-- end code block -->
 
