@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-[].push 4, 'hi', given_name: 'dave', surname: 'smith'
-# => [4, "hi", {:given_name=>"dave", :surname=>"smith"}]
+[].push 4, 'hi', first_name: 'dave', last_name: 'smith'
+# => [4, "hi", {:first_name=>"dave", :last_name=>"smith"}]
