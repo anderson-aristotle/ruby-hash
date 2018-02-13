@@ -10,21 +10,25 @@ Fork, clone, branch (training), `bundle install`
 
 By the end of this, developers should be able to:
 
--   Create a Ruby Hash using both the literal (`{}`) and `new` constructors.
--   Assign a value to, modify, and delete a value in a Ruby Hash using a specified key.
--   Access a value in a Ruby Hash using a specified key.
--   Obtain an Array of keys from a Ruby Hash.
--   Explain why Symbols are preferred over Strings as keys in a Ruby Hash.
+- Create a Ruby Hash using both the literal (`{}`) and `new` constructors.
+- Assign a value to, modify, and delete a value in a Ruby Hash using a specified key.
+- Access a value in a Ruby Hash using a specified key.
+- Obtain an Array of keys from a Ruby Hash.
+- Explain why Symbols are preferred over Strings as keys in a Ruby Hash.
 
 ## Introduction
 
-In Ruby, "A Hash is a dictionary-like collection of unique keys and their values". In sharp contrast to JavaScript, [Ruby Hashes](http://ruby-doc.org/core-2.4.1/Hash.html) are not the most general object in the language, but are instances of a specialized class for key/value storage.
+In Ruby, "A Hash is a dictionary-like collection of unique keys and their
+values". In sharp contrast to JavaScript, [Ruby Hashes](http://ruby-doc.org/core-2.4.1/Hash.html) are not the most general object in the language, but are instances of a specialized class for key/value storage.
 
 ## Ruby Symbols
 
-A [Symbol](http://ruby-doc.org/core-2.4.1/Symbol.html) is a sequence of characters that is stored at most once in any instance of the Ruby interpreter.
+A [Symbol](http://ruby-doc.org/core-2.4.1/Symbol.html) is a sequence of
+characters that is stored at most once in any instance of the Ruby interpreter.
 
-In Ruby, strings are compared a character at a time, but symbols are compared by `object_id`.  This makes comparing symbols fast and therefore much more performant than strings when used as keys in a `Hash`.
+In Ruby, strings are compared a character at a time, but symbols are compared
+by `object_id`.  This makes comparing symbols fast and therefore much more
+performant than strings when used as keys in a `Hash`.
 
 ### Demo: Test Equivalency
 
@@ -62,7 +66,8 @@ Each of the following pairs of operations are equivalent:
 ```
 <!-- end code block -->
 
-We can create a symbol with arbitrary characters if we surround the characters with quotes (either `:'<characters>'` or `'<characters>'.to_sym`):
+We can create a symbol with arbitrary characters if we surround the characters
+with quotes (either `:'<characters>'` or `'<characters>'.to_sym`):
 
 <!-- start code block file="snippets/arbitrary_symbol.rb" -->
 ```rb
@@ -116,7 +121,10 @@ Let's use the different forms of [Hash::new](http://ruby-doc.org/core-2.4.1/Hash
 
 ### Lab: Hash Literal
 
-In [lib/lab.rb](lib/lab.rb) create a hash using the literal syntax for assigning the keys `:sq_ft` `:pets_allowed` with a type-appropriate value of your choice. Then assign a default of `[]` to the hash and make sure that accessing non-existing keys return the default.
+In [lib/lab.rb](lib/lab.rb) create a hash using the literal syntax for
+assigning the keys `:sq_ft` `:pets_allowed` with a type-appropriate value of
+your choice. Then assign a default of `[]` to the hash and make sure that
+accessing non-existing keys return the default.
 
 ## Assigning and Accessing Elements in a Ruby Hash
 
@@ -149,7 +157,9 @@ priced_apartment[:rent] += 150
 
 ### Lab: Appending
 
-Add roommate Bo to `:occupants` in the hash in [lib/lab.rb](lib/lab.rb). Append one or more properties of your choosing to the roommate objects, such as `:job` or `:education`.
+Add roommate Bo to `:occupants` in the hash in [lib/lab.rb](lib/lab.rb). Append
+one or more properties of your choosing to the roommate objects, such as `:job`
+or `:education`.
 
 ### Demo: Hash Keys
 
@@ -166,9 +176,12 @@ priced_apartment.keys
 
 ### Lab: Hash.new Initialized With Default
 
-What if we wanted to instantiate our new hash with this default right off the bat? Checkout the Ruby docs on [new hashes with default blocks](http://ruby-doc.org/core-2.4.1/Hash.html#new-method).
+What if we wanted to instantiate our new hash with this default right off the
+bat? Checkout the Ruby docs on [new hashes with default blocks](http://ruby-doc.org/core-2.4.1/Hash.html#new-method).
 
-Then, in `lib/lab.rb` initialize a new hash using `Hash.new` with a block that sets the default value (without using `.default`) of all keys to the string `"Cool, <keyname> does NOW exist"`
+Then, in `lib/lab.rb` initialize a new hash using `Hash.new` with a block that
+sets the default value (without using `.default`) of all keys to the string
+`"Cool, <keyname> does NOW exist"`
 
 ### Demo: Hash as Final Argument to Method
 
@@ -185,6 +198,6 @@ If the last argument to a method is a hash, you may omit the curly braces.
 
 ## [License](LICENSE)
 
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
+1. All content is licensed under a CC­BY­NC­SA 4.0 license.
+1. All software code is licensed under GNU GPLv3. For commercial use or
     alternative licensing, please contact legal@ga.co.
