@@ -190,8 +190,8 @@ If the last argument to a method is a hash, you may omit the curly braces.
 ```rb
 # frozen_string_literal: true
 
-[].push 4, 'hi', first_name: 'dave', last_name: 'smith'
-# => [4, "hi", {:first_name=>"dave", :last_name=>"smith"}]
+[].push 4, 'hi', first_name: 'sam', last_name: 'allen'
+# => [4, "hi", {:first_name=>"sam", :last_name=>"allen"}]
 ```
 <!-- end code block -->
 
