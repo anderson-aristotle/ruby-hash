@@ -23,7 +23,8 @@ values". In sharp contrast to JavaScript, [Ruby Hashes](http://ruby-doc.org/core
 
 ## Ruby Symbols
 
-A [Symbol](http://ruby-doc.org/core-2.5.0/Symbol.html) is a sequence of characters that is stored at most once in any instance of the Ruby interpreter.
+A [Symbol](http://ruby-doc.org/core-2.5.0/Symbol.html) is a sequence of
+characters that is stored at most once in any instance of the Ruby interpreter.
 
 In Ruby, strings are compared a character at a time, but symbols are compared
 by `object_id`.  This makes comparing symbols fast and therefore much more
@@ -31,7 +32,7 @@ performant than strings when used as keys in a `Hash`.
 
 ### Demo: Test Equivalency
 
-Each of the following pairs of operations are equivalent:
+Let's quickly look at how Ruby compares Strings vs how it compares Symbols.
 
 <!-- start code block file="snippets/equivalency_test.rb" -->
 ```rb
@@ -40,30 +41,26 @@ Each of the following pairs of operations are equivalent:
 'bob'.equal? 'bob'
 # => false
 
-'bob'.object_id == 'bob'.object_id
-# => false
-
-'bob'.eql? 'bob'
-# => true
-
 'bob' == 'bob'
 # => true
 
-# But all of the following operations are equivalent:
+'bob'.object_id == 'bob'.object_id
+# => false
 
 :bob.equal? :bob
 # => true
 
-:bob.object_id == :bob.object_id
-# => true
-
-:bob.eql? :bob
-# => true
-
 :bob == :bob
+# => true
+
+:bob.object_id == :bob.object_id
 # => true
 ```
 <!-- end code block -->
+
+Remember that everything is an object in Ruby, so everything has its own
+`object_id`. Each string of `'bob'` gets a different `object_id`, but the
+symbol `:bob` will always have the same `object_id`.
 
 We can create a symbol with arbitrary characters if we surround the characters
 with quotes (either `:'<characters>'` or `'<characters>'.to_sym`):
@@ -76,8 +73,6 @@ with quotes (either `:'<characters>'` or `'<characters>'.to_sym`):
 # => true
 ```
 <!-- end code block -->
-
-How does this compare to keys in JavaScript?
 
 ## Creating Ruby Hashes
 
