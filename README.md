@@ -76,7 +76,7 @@ with quotes (either `:'<characters>'` or `'<characters>'.to_sym`):
 
 ## Creating Ruby Hashes
 
-Let's look at different ways to create a Hash.
+Let's look at different ways to create a Hash and then add some key value pairs to it.
 
 ### Demo: Hash Creation
 
@@ -115,10 +115,10 @@ Let's use the different forms of [Hash::new](http://ruby-doc.org/core-2.5.0/Hash
 
 ### Lab: Hash Literal
 
-In [lib/lab.rb](lib/lab.rb) create a hash using the literal syntax for
-assigning the keys `:sq_ft` `:pets_allowed` with a type-appropriate value of
-your choice. Then assign a default of `[]` to the hash and make sure that
-accessing non-existing keys return the default.
+In [lib/lab.rb](lib/lab.rb) create a hash using the literal syntax and
+assign the keys `:sq_ft` and `:pets_allowed`, each with a type-appropriate value of
+your choice. Then assign a default value of `[]` to the hash and make sure that
+accessing non-existing keys return the default value.
 
 ## Assigning and Accessing Elements in a Ruby Hash
 
