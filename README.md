@@ -10,9 +10,8 @@ Fork, clone, branch (training), `bundle install`
 
 By the end of this, developers should be able to:
 
-- Create a Ruby Hash using both the literal (`{}`) and `new` constructors.
-- Assign a value to, modify, and delete a value in a Ruby Hash using a specified key.
-- Access a value in a Ruby Hash using a specified key.
+- Create a Ruby Hash using both the literal `{}` and `new` constructors.
+- Access and manipulate values in a Ruby Hash using specified keys.
 - Obtain an Array of keys from a Ruby Hash.
 - Explain why Symbols are preferred over Strings as keys in a Ruby Hash.
 
@@ -61,18 +60,6 @@ Let's quickly look at how Ruby compares Strings vs how it compares Symbols.
 Remember that everything is an object in Ruby, so everything has its own
 `object_id`. Each string of `'bob'` gets a different `object_id`, but the
 symbol `:bob` will always have the same `object_id`.
-
-We can create a symbol with arbitrary characters if we surround the characters
-with quotes (either `:'<characters>'` or `'<characters>'.to_sym`):
-
-<!-- start code block file="snippets/arbitrary_symbol.rb" -->
-```rb
-# frozen_string_literal: true
-
-:'&foo'.equal? '&foo'.to_sym
-# => true
-```
-<!-- end code block -->
 
 ## Creating Ruby Hashes
 
