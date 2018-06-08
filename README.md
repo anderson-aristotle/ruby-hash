@@ -10,9 +10,8 @@ Fork, clone, branch (training), `bundle install`
 
 By the end of this, developers should be able to:
 
-- Create a Ruby Hash using both the literal (`{}`) and `new` constructors.
-- Assign a value to, modify, and delete a value in a Ruby Hash using a specified key.
-- Access a value in a Ruby Hash using a specified key.
+- Create a Ruby Hash using both the literal `{}` and `new` constructors.
+- Access and manipulate values in a Ruby Hash using specified keys.
 - Obtain an Array of keys from a Ruby Hash.
 - Explain why Symbols are preferred over Strings as keys in a Ruby Hash.
 
@@ -23,7 +22,8 @@ values". In sharp contrast to JavaScript, [Ruby Hashes](http://ruby-doc.org/core
 
 ## Ruby Symbols
 
-http://ruby-doc.org/core-2.5.0/Symbol.htmlcharacters that is stored at most once in any instance of the Ruby interpreter.
+A [Symbol](http://ruby-doc.org/core-2.5.0/Symbol.html) is a sequence of
+characters that is stored at most once in any instance of the Ruby interpreter.
 
 In Ruby, strings are compared a character at a time, but symbols are compared
 by `object_id`.  This makes comparing symbols fast and therefore much more
@@ -31,7 +31,7 @@ performant than strings when used as keys in a `Hash`.
 
 ### Demo: Test Equivalency
 
-Each of the following pairs of operations are equivalent:
+Let's quickly look at how Ruby compares Strings vs how it compares Symbols.
 
 <!-- start code block file="snippets/equivalency_test.rb" -->
 ```rb
@@ -40,48 +40,30 @@ Each of the following pairs of operations are equivalent:
 'bob'.equal? 'bob'
 # => false
 
-'bob'.object_id == 'bob'.object_id
-# => false
-
-'bob'.eql? 'bob'
-# => true
-
 'bob' == 'bob'
 # => true
 
-# But all of the following operations are equivalent:
+'bob'.object_id == 'bob'.object_id
+# => false
 
 :bob.equal? :bob
 # => true
 
-:bob.object_id == :bob.object_id
-# => true
-
-:bob.eql? :bob
-# => true
-
 :bob == :bob
 # => true
-```
-<!-- end code block -->
 
-We can create a symbol with arbitrary characters if we surround the characters
-with quotes (either `:'<characters>'` or `'<characters>'.to_sym`):
-
-<!-- start code block file="snippets/arbitrary_symbol.rb" -->
-```rb
-# frozen_string_literal: true
-
-:'&foo'.equal? '&foo'.to_sym
+:bob.object_id == :bob.object_id
 # => true
 ```
 <!-- end code block -->
 
-How does this compare to keys in JavaScript?
+Remember that everything is an object in Ruby, so everything has its own
+`object_id`. Each string of `'bob'` gets a different `object_id`, but the
+symbol `:bob` will always have the same `object_id`.
 
 ## Creating Ruby Hashes
 
-Let's look at different ways to create a Hash.
+Let's look at different ways to create a Hash and then add some key value pairs to it.
 
 ### Demo: Hash Creation
 
@@ -120,10 +102,10 @@ Let's use the different forms of [Hash::new](http://ruby-doc.org/core-2.5.0/Hash
 
 ### Lab: Hash Literal
 
-In [lib/lab.rb](lib/lab.rb) create a hash using the literal syntax for
-assigning the keys `:sq_ft` `:pets_allowed` with a type-appropriate value of
-your choice. Then assign a default of `[]` to the hash and make sure that
-accessing non-existing keys return the default.
+In [lib/lab.rb](lib/lab.rb) create a hash using the literal syntax and
+assign the keys `:sq_ft` and `:pets_allowed`, each with a type-appropriate value of
+your choice. Then assign a default value of `[]` to the hash and make sure that
+accessing non-existing keys return the default value.
 
 ## Assigning and Accessing Elements in a Ruby Hash
 
