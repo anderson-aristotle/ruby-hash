@@ -103,10 +103,11 @@ some hashes in `lib/code_along.rb`.
 
 ### Lab: Hash Literal
 
-In [lib/lab.rb](lib/lab.rb) create a hash using the literal syntax and
-assign the keys `:sq_ft` and `:pets_allowed`, each with a type-appropriate value
-of your choice. Then assign a default value of `[]` to the hash and make sure
-that accessing non-existing keys return the default value.
+In [lib/lab.rb](lib/lab.rb), assign a hash using the literal syntax to the
+variable `apartment`. Then, assign the keys `:sq_ft` and `:pets_allowed`,
+each with a type-appropriate value of your choice. Finally, assign a default
+value of `[]` to the hash and make sure that accessing non-existing keys return
+the default value.
 
 ## Assigning and Accessing Elements in a Ruby Hash
 
@@ -135,9 +136,10 @@ priced_apartment[:rent] += 150
 
 ### Lab: Appending
 
-Add roommate Bo to `:occupants` in the hash in [lib/lab.rb](lib/lab.rb). Append
-one or more properties of your choosing to the roommate objects, such as `:job`
-or `:education`.
+Create an `:occupants` key with the value of `[]` to the `apartment` hash in
+[lib/lab.rb](lib/lab.rb). Add roommate Bo to `:occupants`. Append one or more
+properties of your choosing to the roommate object, such as `:job` or
+`:education`.
 
 ### Demo: Hash Keys
 
