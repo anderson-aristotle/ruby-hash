@@ -22,7 +22,9 @@ By the end of this, developers should be able to:
 ## Introduction
 
 In Ruby, "A Hash is a dictionary-like collection of unique keys and their
-values". In sharp contrast to JavaScript, [Ruby Hashes](http://ruby-doc.org/core-2.5.0/Hash.html) are not the most general object in the language, but are instances of a specialized class for key/value storage.
+values". In sharp contrast to JavaScript, [Ruby Hashes](http://ruby-doc.org/core-2.5.0/Hash.html)
+are not the most general object in the language, but are instances of a
+specialized class for key/value storage.
 
 ## Ruby Symbols
 
@@ -38,6 +40,7 @@ performant than strings when used as keys in a `Hash`.
 Let's quickly look at how Ruby compares Strings vs how it compares Symbols.
 
 <!-- start code block file="snippets/equivalency_test.rb" -->
+
 ```rb
 # frozen_string_literal: true
 
@@ -59,6 +62,7 @@ Let's quickly look at how Ruby compares Strings vs how it compares Symbols.
 :bob.object_id == :bob.object_id
 # => true
 ```
+
 <!-- end code block -->
 
 Remember that everything is an object in Ruby, so everything has its own
@@ -67,11 +71,13 @@ symbol `:bob` will always have the same `object_id`.
 
 ## Creating Ruby Hashes
 
-Let's look at different ways to create a Hash and then add some key value pairs to it.
+Let's look at different ways to create a Hash and then add some key value pairs
+to it.
 
 ### Demo: Hash Creation
 
 <!-- start code block file="snippets/hash_creation.rb" -->
+
 ```rb
 # frozen_string_literal: true
 
@@ -96,26 +102,30 @@ apartment[:bedrooms] = 3
 priced_apartment = apartment.merge(rent: 1000)
 # => {:address=>{:street=>"255 Long Road", :city=>"Awesomeville"}, :bedrooms=>3, :rent=>1000}
 ```
+
 <!-- end code block -->
 
 Picking sensible defaults may not always be easy.
 
 ### Code Along: Hash::new
 
-Let's use the different forms of [Hash::new](http://ruby-doc.org/core-2.5.0/Hash.html#method-c-new) to create some hashes in `lib/code_along.rb`.
+Let's use the different forms of
+[Hash::new](http://ruby-doc.org/core-2.5.0/Hash.html#method-c-new) to create
+some hashes in `lib/code_along.rb`.
 
 ### Lab: Hash Literal
 
 In [lib/lab.rb](lib/lab.rb) create a hash using the literal syntax and
-assign the keys `:sq_ft` and `:pets_allowed`, each with a type-appropriate value of
-your choice. Then assign a default value of `[]` to the hash and make sure that
-accessing non-existing keys return the default value.
+assign the keys `:sq_ft` and `:pets_allowed`, each with a type-appropriate value
+of your choice. Then assign a default value of `[]` to the hash and make sure
+that accessing non-existing keys return the default value.
 
 ## Assigning and Accessing Elements in a Ruby Hash
 
 ### Demo: Accessing, Modifying, and Deleting
 
 <!-- start code block file="snippets/hash_elements.rb" -->
+
 ```rb
 # frozen_string_literal: true
 
@@ -138,6 +148,7 @@ priced_apartment[:occupants][1].delete(:cat)
 priced_apartment[:rent] += 150
 # => 1150
 ```
+
 <!-- end code block -->
 
 ### Lab: Appending
@@ -151,12 +162,14 @@ or `:education`.
 To get an Array of the keys that have been set in a hash, use `Hash#keys`.
 
 <!-- start code block file="snippets/hash_keys.rb" -->
+
 ```rb
 # frozen_string_literal: true
 
 priced_apartment.keys
 # => [:address, :bedrooms, :occupants, :rent]
 ```
+
 <!-- end code block -->
 
 ### Lab: Hash.new Initialized With Default
@@ -173,12 +186,14 @@ sets the default value (without using `.default`) of all keys to the string
 If the last argument to a method is a hash, you may omit the curly braces.
 
 <!-- start code block file="snippets/terminal_hash_argument.rb" -->
+
 ```rb
 # frozen_string_literal: true
 
 [].push 4, 'hi', first_name: 'sam', last_name: 'allen'
 # => [4, "hi", {:first_name=>"sam", :last_name=>"allen"}]
 ```
+
 <!-- end code block -->
 
 ## [License](LICENSE)
