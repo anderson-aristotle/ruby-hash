@@ -4,11 +4,11 @@
 
 ## Preparation
 
-1.  Fork and clone this repository.
+1. Fork and clone this repository.
  [FAQ](https://git.generalassemb.ly/ga-wdi-boston/meta/wiki/ForkAndClone)
-1.  Create a new branch, `training`, for your work.
-1.  Checkout to the `training` branch.
-1.  Install dependencies with `bundle install`.
+1. Create a new branch, `training`, for your work.
+1. Checkout to the `training` branch.
+1. Install dependencies with `bundle install`.
 
 ## Objectives
 
@@ -39,11 +39,7 @@ performant than strings when used as keys in a `Hash`.
 
 Let's quickly look at how Ruby compares Strings vs how it compares Symbols.
 
-<!-- start code block file="snippets/equivalency_test.rb" -->
-
 ```rb
-# frozen_string_literal: true
-
 'bob'.equal? 'bob'
 # => false
 
@@ -63,8 +59,6 @@ Let's quickly look at how Ruby compares Strings vs how it compares Symbols.
 # => true
 ```
 
-<!-- end code block -->
-
 Remember that everything is an object in Ruby, so everything has its own
 `object_id`. Each string of `'bob'` gets a different `object_id`, but the
 symbol `:bob` will always have the same `object_id`.
@@ -76,11 +70,7 @@ to it.
 
 ### Demo: Hash Creation
 
-<!-- start code block file="snippets/hash_creation.rb" -->
-
 ```rb
-# frozen_string_literal: true
-
 apartment = {}
 # => {}
 
@@ -103,8 +93,6 @@ priced_apartment = apartment.merge(rent: 1000)
 # => {:address=>{:street=>"255 Long Road", :city=>"Awesomeville"}, :bedrooms=>3, :rent=>1000}
 ```
 
-<!-- end code block -->
-
 Picking sensible defaults may not always be easy.
 
 ### Code Along: Hash::new
@@ -124,11 +112,7 @@ that accessing non-existing keys return the default value.
 
 ### Demo: Accessing, Modifying, and Deleting
 
-<!-- start code block file="snippets/hash_elements.rb" -->
-
 ```rb
-# frozen_string_literal: true
-
 priced_apartment[:occupants] = []
 # => []
 
@@ -149,8 +133,6 @@ priced_apartment[:rent] += 150
 # => 1150
 ```
 
-<!-- end code block -->
-
 ### Lab: Appending
 
 Add roommate Bo to `:occupants` in the hash in [lib/lab.rb](lib/lab.rb). Append
@@ -161,16 +143,10 @@ or `:education`.
 
 To get an Array of the keys that have been set in a hash, use `Hash#keys`.
 
-<!-- start code block file="snippets/hash_keys.rb" -->
-
 ```rb
-# frozen_string_literal: true
-
 priced_apartment.keys
 # => [:address, :bedrooms, :occupants, :rent]
 ```
-
-<!-- end code block -->
 
 ### Lab: Hash.new Initialized With Default
 
@@ -185,16 +161,10 @@ sets the default value (without using `.default`) of all keys to the string
 
 If the last argument to a method is a hash, you may omit the curly braces.
 
-<!-- start code block file="snippets/terminal_hash_argument.rb" -->
-
 ```rb
-# frozen_string_literal: true
-
 [].push 4, 'hi', first_name: 'sam', last_name: 'allen'
 # => [4, "hi", {:first_name=>"sam", :last_name=>"allen"}]
 ```
-
-<!-- end code block -->
 
 ## [License](LICENSE)
 
