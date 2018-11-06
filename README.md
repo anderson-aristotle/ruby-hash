@@ -29,7 +29,7 @@ specialized class for key/value storage.
 ## Ruby Symbols
 
 A [Symbol](http://ruby-doc.org/core-2.5.0/Symbol.html) is a sequence of
-characters that is stored at most once in any instance of the Ruby interpreter.
+characters that is stored, at most, once in any instance of the Ruby interpreter.
 
 In Ruby, strings are compared a character at a time, but symbols are compared
 by `object_id`.  This makes comparing symbols fast and therefore much more
